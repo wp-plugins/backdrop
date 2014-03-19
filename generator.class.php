@@ -34,23 +34,20 @@
 				$repeat = 'repeat';
 			break;
 		}
-		if($a['attachment']=='parallax' || $a['attachment']=='slide'){
-			// At it's base it's the same as a fixed background, so instead of a bunch of special code we'll just fake that.
-			$a['hpos'] = '0px';
-			$a['vpos'] = '0px';
-		}
 		if($a['attachment']=='parallax'){
 			// We need a tad bit of scripting to make parallax... prallax...
 			$this->js ='window.onload=function(){'."\n";
 			$this->js.='	window.onscroll=function(){'."\n";
 			$this->js.='		var sY = (document.documentElement.scrollTop)?document.documentElement.scrollTop:window.pageYOffset;'."\n";
 			$this->js.='		var pB = document.getElementsByTagName("body")[0];'."\n";
-			$this->js.='		document.getElementsByTagName("body")[0].style.backgroundPosition="0px "+Math.round((sY*'.($a['parallax_adjustment']/100).')*-1)+"px"'."\n";
+			$this->js.='		document.getElementsByTagName("body")[0].style.backgroundPosition="'.$a['hpos'].' "+Math.round((sY*'.($a['parallax_adjustment']/100).')*-1)+"px"'."\n";
 			$this->js.='	}'."\n";
 			$this->js.='}'."\n";
 		}
 		if($a['attachment']=='slide'){
 			// At it's core it's just a modified version of parallax that can work in both directions, of couse the increases the complextiy a bit.
+			$a['hpos'] = '0px';
+			$a['vpos'] = '0px';
 			$this->js ='window.onload=function(){'."\n";
 			$this->js.='	window.onscroll=function(){'."\n";
 			$this->js.='		var vS = "0";'."\n";
@@ -74,7 +71,7 @@
 			$this->js.='}'."\n";
 		}
 		if($a['attachment']=='parallax' || $a['attachment']=='slide'){
-			// Now that all the scripting is handled lets change to to fixed so the scc is simpler
+			// Now that all the scripting is handled lets change to to fixed so the css is simpler
 			$a['attachment'] = 'fixed';
 		}
 		switch($a['attachment']){
@@ -103,7 +100,7 @@
 				$this->css.='html body,'."\n";
 				$this->css.='html body.custom-background,'."\n";
 				$this->css.='html body.customize-support{'."\n";
-				$this->css.='	background: '.$a['color'].' url("'.$a['img'].'") '.$repeat.' '.$a['attachment'].' '.$a['vpos'].' '.$a['hpos'].';'."\n";
+				$this->css.='	background: '.$a['color'].' url("'.$a['img'].'") '.$repeat.' '.$a['attachment'].' '.$a['hpos'].' '.$a['vpos'].';'."\n";
 				if($a['retinize']=='yes'){
 					$is=getimagesize($a['img']);
 					$this->css.='	background-size: '.($is[0]/2).'px '.($is[1]/2).'px;'."\n";
