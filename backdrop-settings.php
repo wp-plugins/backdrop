@@ -116,7 +116,7 @@ textarea{
 					<input type="radio" <?= @($settings['backdrop']['image']['repeat']=='none'?'checked="checked"':'') ?> name="backdrop[image][repeat]" value="none" id="background_image_repeat_none" /> <span class="description"><label for="background_image_repeat_none">No Repeat</label></span> &nbsp; &nbsp; &nbsp;
 				</td>
 			</tr>
-			<tr valign="top" class="scroll fixed">
+			<tr valign="top" class="scroll parallax fixed">
 				<th scope="row">Image Horizontal Position</th>
 				<td>
 					<input type="radio" <?= @($settings['backdrop']['image']['hpos']=='left'?'checked="checked"':'') ?> name="backdrop[image][hpos]" value="left" id="background_image_hpos_left" /> <span class="description"><label for="background_image_hpos_left">Left</label></span> &nbsp; &nbsp; &nbsp;
