@@ -278,25 +278,33 @@ textarea{
 	</p>
 </form>
 
-<h3>Plugin Miscellanea</h3>
+<h3 class="title">Miscellaneous</h3>
 <table class="form-table">
-	<tbody>
-		<tr valign="top">
-			<th scope="row"><label for="active_includes_notes">Contact the Plug-in Author</label></th>
-			<td>
-				<span class="description">If you have any questions or problems I can be contacted directly at <a href="mailto:phillip.gooch@gmail.com?subject=Backdrop%20WordPress%20Plugin%20-%20version%20<?= $settings['version'] ?>">phillip.gooch@gmail.com</a> or with the handy dandy contact for located at <a href="http://www.fatfolderdesign.com/contact-me" target="_blank">FatFolderDesign.com &mdash; Contact</a>.</span>
-			</td>
-		</tr>
-
-		<!-- This really isn't important
-		<tr valign="top">
-			<th scope="row"><label for="active_includes_notes">Donate to the Author</label></th>
-			<td>
-				<span class="description">If you like the plugin so much that you feel like donating a $1 that would be grand, and $2 would be even grand-er. I don't currently have that sorta thing set up (it's only come up once so far). If you'd like to do something that makes me giddy as a schoolgirl at a N*Sync concert (or whatever the blazes school girls listen to these days) send me an email telling me what you like about the plugin (or what you don't like, or what you wish it could do). Also, hitting that "Allow Analytics" button up there would be pretty awesome.</span>
-			</td>
-		</tr>
-		-->
-	</tbody>
+	<tr valign="top">
+		<th scope="row"><label for="nothing">Have a problem</label></th>
+		<td>
+			Having trouble getting the plug-in working? Expected results? Feel like direction your repentant rage at someone far far away? Just have a general usage question? You can try the <a href="http://wordpress.org/support/plugin/backdrop" target="_blank">plug-ins support form</a> or, if you want an answer from the source, feel free to email me at <a href="mailto:phillip.gooch@gmail.com" target="_blank">phillip.gooch@gmail.com</a>.
+		</td>
+	</tr>
+	<tr valign="top">
+		<th scope="row"><label for="nothing">Check out the code</label></th>
+		<td>
+			Want to see how it all works, you can check out the on the <a href="http://plugins.svn.wordpress.org/backdrop/trunk/" target="_blank">WordPress SVN</a> or, even better, <a href="https://github.com/pgooch/backdrop" target="_blank">fork it on GitHub</a>. Feel free to make changes and submit pull requests, good ideas will be added to the master branch.
+		</td>
+	</tr>
+	<tr valign="top">
+		<th scope="row">Donate</th>
+		<td>
+			Like the plug-in and want to support further development? Thanks! You can use the paypal button below to donate any amount you want. Don't like PayPal? send me an email, we can figure something out.<br/>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</td>
+	</tr>
 </table>
 
 <script>
