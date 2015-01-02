@@ -2,8 +2,8 @@
 Contributors: Phillip.Gooch
 Tags: background, customization, themes
 Requires at least: 3.2
-Tested up to: 3.4
-Stable tag: 1.1.3
+Tested up to: 4.1
+Stable tag: 1.3.6
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,17 @@ Probably, let me know and I'll see if I can work it in there.
 
 == Changelog ==
 
+#### 1.3.6
+ + Confirmed plugin compatibility with WordPress 4.1
+#### 1.3.5
+ + Confirmed plugin compatibility with WordPress 4.0
+#### 1.3.4
+ + Added the ability to set the horizontal alignment to “stretch”, makign it exapnd to full width on some image background attachment types.
+ + Fixed a JavasScript quirk that would cause the background to jump to where it should be on page reload.
+#### 1.2.3
+ + Fixed a bug where the readme did not properly update for version 1.1.2
+ + Added a new “Miscellaneous” section to the settings page.
+ + Added a proper screenshot to replace the one that went missing at some point.
 #### 1.1.2
  + Added options to control horizontal position when using parallax.
 #### 1.0.2
