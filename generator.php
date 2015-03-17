@@ -14,6 +14,11 @@ if(isset($_GET['use_session'])){
 	$session = array();
 }
 
+// And finally lets send some headers out
+$time = round($options['last_update']/1000);//Because timestamps in JS are not in seconds
+header("Last-Modified: ".gmdate("D, d M Y H:i:s",$time)." GMT");
+header('Cache-Control: public');
+
 // Load the primary options
 $options = get_option('backdrop',array());
 
@@ -64,17 +69,6 @@ if($_in_advanced){
 	echo '*/'."\n";
 }
 
-// And finally lets send some headers out
-$time = round($options['last_update']/1000);//Because timestamps in JS are not in seconds
-header("Last-Modified: ".gmdate("D, d M Y H:i:s",$time)." GMT");
-header('Cache-Control: public');
-
-// And if were getting a last modofied and it hasent been modofied...
-if(@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$time) { 
-	header("HTTP/1.1 304 Not Modified"); 
-	exit; 
-}
-
 
 /*
 	We are going to pre-process some of the values into things that work a little better for the CSS and JS parts.
@@ -123,6 +117,7 @@ if($options['image']!=''){
 if(isset($_GET['generate']) && $_GET['generate']=='css'){
 	
 	// output the header
+	header("Status: 200");
 	header('Content-Type: text/css');
 
 	// Open the styles for the element
@@ -164,6 +159,7 @@ if(isset($_GET['generate']) && $_GET['generate']=='css'){
 }else if(isset($_GET['generate']) && $_GET['generate']=='js'){
 	
 	// output the header
+	header("Status: 200");
 	header('Content-Type: text/javascript');
 
 	// If the background effect is slide scroll then convert that into a slide
@@ -349,5 +345,8 @@ if(isset($_GET['generate']) && $_GET['generate']=='css'){
 	If get set to to something else, or nothing at all, 404
 */
 }else{
+
+	echo 'Unable to determine desired document type.';
 	header("HTTP/1.0 404 Not Found");
+
 }

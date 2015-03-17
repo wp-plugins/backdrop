@@ -18,7 +18,6 @@ Backdrop is a site background customizer with power greater than the mere stock 
 + Uses the WordPress customizer interface so you can see your changes as you make them.
 + One click HiDpi (or retina) backgrounds, make it look all purdy on that fancy screen.
 + Theme schmeme, we don't need support in your stinkin theme, backdrop can force it's way into nearly any theme.
-+ Calls external JS and CSS files that are appropriately cached.
 + Advanced options for those in the know with CSS.
 + Built for the smoothest animations possible.
 
@@ -46,6 +45,10 @@ Probably, let me know and I'll see if I can work it in there.
 
 == Changelog ==
 
+#### 2.0.1
+ + Fixed an issue that could use some servers to report 404 when the file was clearly there.
+ + Modified headers pertaining to caching for better customizer reliability, may be further revised in a later version.
+ + Kicked myself for not testing on my finicky server before releasing.
 #### 2.0.0
  + New from the ground up backdrop now supports the WP customizer.
  + Improvements to how the style-sheet and javascript files are generated.
